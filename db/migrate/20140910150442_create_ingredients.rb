@@ -5,6 +5,7 @@ class CreateIngredients < ActiveRecord::Migration
       t.integer :food_item_id
       t.float :quantity
       t.string :unit
+      t.timestamps
     end
   end
 end

@@ -1,6 +1,6 @@
 get '/user/new' do
 
-  erb :
+  erb :'user/new'
 end
 
 get '/user/:id' do
