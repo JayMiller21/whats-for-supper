@@ -1,0 +1,30 @@
+#container {
+  width: 900px;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+nav {
+  background-color: #a02;
+  padding: 10px 0;
+  border-radius: 20px;
+  height: 40px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+}
+
+nav a.right-align {
+  float: right;
+}
+
+nav a.left-align {
+  float: left;
+}
