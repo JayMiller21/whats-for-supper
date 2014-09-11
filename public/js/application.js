@@ -4,4 +4,18 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+  // AJAX post example:
+  // $('button#add_question').click(function(event){
+  //   question_counter ++;
+  //   event.preventDefault();
+  //   $.ajax({
+  //     url: '/question/new',
+  //     method: 'POST',
+  //     data: {count: question_counter }
+  //   }).done(function(data){
+  //     $('div#questions').append(data);
+  //   });
+  // });
+
 });
