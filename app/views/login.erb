@@ -1,7 +1,11 @@
+<% if session[:error] %>
+<p><%= session[:error] %></p>
+<% end %>
+
 <div id='login'>
   <form action='/login' method='post'>
-    <input type="text" placeholder="Username" name='username'><br>
-    <input type="password" placeholder="Password"  name='password'><br>
+    <input type="text" placeholder="Username" name='user[name]'><br>
+    <input type="password" placeholder="Password"  name='user[password]'><br>
     <input type="submit" value="Log In!">
   </form>
 </div>

@@ -1,3 +1,12 @@
-<a href="user/:id/recipes">My Recipes</a>
+<% if @user_id == session[:current_user_id] %>
+  <h2>Welcome, <%= @user.name %>!</h2>
+  <button id="my_recipes_button" class="button">My Recipes</button>
+  <a class="button" href="/recipe/new">New Recipe</a>
+  <div id="current_user_cookbook" ><%= erb :"/recipe/_index" %></div>
+<% else %>
+  <h2><%= @user.name %>'s Cookbook</h2>
+  <%= erb :"/recipe/_index" %>
+<% end %>
 
-<a href="/recipe/new">New Recipe</a>
+
+ <a id="my_recipes_button" class="button" href="user/<%= @user_id %>/recipes">My Recipes</a>

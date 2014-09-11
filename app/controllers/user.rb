@@ -1,19 +1,33 @@
-get '/user/new' do
-
-  erb :'user/new'
+get "/user/new" do
+  erb :"user/new"
 end
 
-get '/user/:id' do
+post "/user/new" do
+  unless User.find_by(name: params[:user][:name])
 
-  erb :'user/show'
+    user = User.create(name: params[:user][:name], password: params[:user][:password])
+    session[:error] = nil
+    redirect to "/user/#{user.id}"
+  end
+    session[:error] = "User with that name already exists."
+    redirect to "/login"
 end
 
-get '/user/:id/edit' do
-
-  erb :'user/show'
+get "/user/:id" do
+  @user_id = params[:id].to_i
+  @user = User.find(@user_id)
+  @recipes = @user.recipes
+  erb :"/user/show"
 end
 
-get '/user/:id/recipes' do
+get "/user/:id/edit" do
 
-  erb :'recipe/index'
+  erb :"user/show"
 end
+
+get "/user/:id/recipes" do
+
+  erb :"recipe/index"
+end
+
+

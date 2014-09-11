@@ -1,5 +1,6 @@
 <nav>
-  <a class="left-align" href="/user/:id">Home</a>
+  <a class="left-align" href="/user/<%= session[:current_user_id] %>">Home</a>
   <a class="right-align" href="/login">Login</a>
   <a class="right-align" href="/user/new">Sign Up</a>
+  <a class="right-align" href="/logout">Log Out</a>
 </nav>

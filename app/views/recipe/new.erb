@@ -1,0 +1,16 @@
+<div id='new_recipe'>
+  <form action='/recipe/new' method='post'>
+
+    <div id="recipe_info">
+      <input type="text" name='recipe[name]' placeholder='Name your recipe'>
+    </div>
+    <br>
+    <div id="ingredients">
+     <%= erb :'recipe/_ingredient'  %>
+    </div>
+
+    <button class="button">Add another ingredient</button>
+
+    <input class="button" type="submit" value="Add to My Cookbook">
+  </form>
+</div>
