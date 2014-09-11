@@ -28,3 +28,8 @@ nav a.right-align {
 nav a.left-align {
   float: left;
 }
+
+#current_user_cookbook {
+  display: hide;
+}
+

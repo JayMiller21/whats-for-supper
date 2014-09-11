@@ -5,6 +5,10 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
+  $("#my_recipes_button").on("click", function() {
+    $("#current_user_cookbook").css( "display", "block");
+  });
+
   // AJAX post example:
   // $('button#add_question').click(function(event){
   //   question_counter ++;
