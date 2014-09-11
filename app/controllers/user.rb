@@ -12,3 +12,8 @@ get '/user/:id/edit' do
 
   erb :'user/show'
 end
+
+get '/user/:id/recipes' do
+
+  erb :'recipe/index'
+end

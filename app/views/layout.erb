@@ -14,11 +14,17 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!-- Load chart script -->
+  <script src="/js/chart.js"></script>
 
-  <title></title>
+  <title>What's for Supper?</title>
 </head>
 <body>
-  <%= _header %>
-  <%= yield %>
+  <div id="container">
+    <%= erb :_header %>
+    <%= yield %>
+  </div>
 </body>
 </html>

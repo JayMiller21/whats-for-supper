@@ -1,3 +1,8 @@
+get '/recipes' do
+
+  erb :'recipe/index'
+end
+
 get '/recipe/new' do
 
   erb :'recipe/new'
