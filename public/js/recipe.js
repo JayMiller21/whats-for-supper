@@ -6,6 +6,22 @@ function Recipe () {
 
 Recipe.prototype = {
 
-  // Add functions to get ruby values for nutrient attributes so these  can be shown on chart in chart.js
+  //TODO: get nutrient info from database. To be used in chart.js script.
+
+  fatCals: function () {
+
+  },
+
+  proteinCals: function () {
+
+  },
+
+  carbCals: function () {
+
+  },
+
+  totalCals: function () {
+
+  }
 
 }

@@ -14,13 +14,13 @@
         data.addColumn('string', 'Nutrient');
         data.addColumn('number', 'grams');
         data.addRows([
-          ['Protein', 3],
+          ['Protein', 3], //TODO: hardcoded values are to be replaced with references to database data via recipe.js.
           ['Carbs', 1],
           ['Fat', 1],
         ]);
 
         // Set chart options
-        var options = {'title':"Recipe Name",
+        var options = {'title':"Recipe Name", //TODO: Recipe name to be replaced with reference to database data via recipe.js.
                        'width':400,
                        'height':300};
 
