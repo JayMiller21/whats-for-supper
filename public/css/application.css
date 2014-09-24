@@ -24,7 +24,7 @@ nav a {
   display: hide;
 }
 
-#container a {
+#container a.button, button, input[type=submit] {
   background-color: #aaa;
   color: black;
   text-decoration: none;
@@ -32,10 +32,16 @@ nav a {
   padding: 3px;
   margin: 3px;
   display: inline-block;
+  border: 1px outset buttonface;
 }
 
 #macronutrient_pie_chart {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
