@@ -1,7 +1,6 @@
 #container {
-  width: 900px;
-  border: 3px solid black;
-  border-radius: 20px;
+  width: 800px;
+  border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -10,8 +9,8 @@
 nav {
   background-color: #a02;
   padding: 10px 0;
-  border-radius: 20px;
   height: 40px;
+  margin-bottom: 10px;
 }
 
 nav a {
@@ -21,15 +20,16 @@ nav a {
   padding: 15px;
 }
 
-nav a.right-align {
-  float: right;
-}
-
-nav a.left-align {
-  float: left;
-}
-
 #current_user_cookbook {
   display: hide;
 }
 
+#container a {
+  background-color: #aaa;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+}
