@@ -37,3 +37,8 @@ end
 
 #   erb :'recipe/show'
 # end
+
+get '/ingredient/new' do
+  p "hello"
+  erb :'recipe/_ingredient_form', layout: false
+end
