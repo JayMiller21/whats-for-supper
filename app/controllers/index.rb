@@ -1,25 +1,44 @@
 get '/' do
-  session[:error] = nil
-  erb :'/index'
+  erb :index
 end
 
-get "/login" do
-  erb :"/login"
-end
-
-post "/login" do
-  user = User.find_by(name: params[:user][:name])
-  if user && user.authenticate(params[:user][:password])
-    session[:current_user_id] = user.id
-    session[:error] = nil
-    redirect to "/user/#{user.id}"
-  else
-    session[:error] = "username or password incorrect."
-    redirect to "/login"
+get '/login' do
+  if session[:login_error]
+    @error = session[:login_error]
+    session[:login_error] = nil
   end
+
+  erb :'login_signup'
 end
 
-get "/logout" do
+post '/login' do
+  @user = User.find_by(name: params[:login][:name])
+
+  if @user
+
+    if @user.authenticate(params[:login][:password])
+      session[:user_id] = @user.id
+      redirect to :"/user/#{@user.id}"
+    else
+      session[:login_error] = "Username and/or password are incorrect" #QUESTION: Would it be desirable to add have my errors included in the same session hash as the activerecord errors (so all errors are in one place, and I could make a partial that referred to that one place, and use the partial on every page that required errors to be shown)? And should I use an error handler (error ... do ... end)?
+      redirect to :'/login'
+    end
+
+  else
+    session[:login_error] = "Not a valid username"
+    redirect to :'/login'
+  end
+
+end
+
+post '/signup' do
+  @user = User.create(name: params[:signup][:name], password: params[:signup][:password])
+  # binding.pry
+  session[:user_id] = @user.id
+  redirect to :"/user/#{@user.id}"
+end
+
+get '/logout' do
   session.clear
-  redirect to "/"
+  redirect to :'/'
 end
