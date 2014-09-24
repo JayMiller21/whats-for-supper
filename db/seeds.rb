@@ -13,3 +13,6 @@ Recipe.first.ingredients << Ingredient.create(food_item_id: 50, quantity: 7, uni
 
 paul = User.create(name: "paul", password_digest: "password")
 paul.recipes << Recipe.create(name: "carrot cake")
+
+
+# User.second.recipes.create(name: "salad", total_fat: nil, total_protein: nil, total_carb: nil)
