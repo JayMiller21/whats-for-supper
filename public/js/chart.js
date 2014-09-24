@@ -25,6 +25,6 @@
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('macronutrient_pie_chart'));
         chart.draw(data, options);
       }

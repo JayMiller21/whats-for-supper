@@ -33,3 +33,9 @@ nav a {
   margin: 3px;
   display: inline-block;
 }
+
+#macronutrient_pie_chart {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}

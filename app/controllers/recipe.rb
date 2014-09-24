@@ -9,10 +9,16 @@ end
 #   erb :'recipe/new'
 # end
 
-# get '/recipe/:id' do
-
-#   erb :'recipe/show'
-# end
+get '/recipe/:id' do
+  @recipe = Recipe.find(params[:id])
+  @ingredients = @recipe.ingredients
+  @ingredient_names = @ingredients.map do |ingredient|
+    FoodItem.find(ingredient.food_item_id).name
+  end
+  @ingredient_names.to_a
+    # binding.pry
+  erb :'recipe/show'
+end
 
 # post '/recipe/new' do
 #   #can only add one ingredient currently

@@ -7,9 +7,9 @@ end
 
 #Users created in seed file can't login properly. Sign up on site and then login works properly.
 
-# jenn = User.create(name: "jenn", password_digest: "password")
-# jenn.recipes << Recipe.create(name: "applesauce")
-# Recipe.first.ingredients << Ingredient.create(food_item_id: 50, quantity: 7, unit: "whole")
+jenn = User.create(name: "jenn", password_digest: "password")
+jenn.recipes << Recipe.create(name: "applesauce")
+Recipe.first.ingredients << Ingredient.create(food_item_id: 50, quantity: 7, unit: "whole")
 
-# paul = User.create(name: "paul", password_digest: "password")
-# paul.recipes << Recipe.create(name: "carrot cake")
+paul = User.create(name: "paul", password_digest: "password")
+paul.recipes << Recipe.create(name: "carrot cake")
