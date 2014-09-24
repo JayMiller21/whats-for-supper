@@ -1,3 +1,10 @@
+before "/user/*" do
+# before %r{/user/([\d]+)([\/]?)([\w]+)} do
+  current_user
+  @hello = "hello"
+  # @page_owner = User.find(params[:id]) #QUESTION: I couldn't figure out how I could refer to params[:id] in here.
+end
+
 get "/user/new" do
   erb :"user/new"
 end
@@ -29,5 +36,3 @@ get "/user/:id/recipes" do
 
   erb :"recipe/index"
 end
-
-

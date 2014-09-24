@@ -1,6 +1,12 @@
 <nav>
-  <a class="left-align" href="/user/<%= session[:current_user_id] %>">Home</a>
-  <a class="right-align" href="/login">Login</a>
-  <a class="right-align" href="/user/new">Sign Up</a>
-  <a class="right-align" href="/logout">Log Out</a>
+
+  <a href="/">Site Home</a>
+
+  <% if logged_in? %>
+    <a href="/user/<%= @current_user.id %>">My Dashboard</a>
+    <a href="/logout" >Logout</a>
+  <% else %>
+    <a href="/login">Login/ Signup</a>
+  <% end %>
+
 </nav>
