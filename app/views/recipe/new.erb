@@ -1,18 +1,15 @@
 <h2>New Recipe</h2>
 
-<div id='new_recipe'>
-  <form action='/recipe/new' method='post'>
+<form action='/recipe/new' method='post' id="new_recipe_form">
 
-    <div id="recipe_info">
-      <input type="text" name='recipe[name]' placeholder='Name your recipe'>
-    </div>
-    <br>
-    <div id="ingredients">
-     <%= erb :'recipe/_ingredient_form'  %>
-    </div>
+  <input type="text" name='recipe[name]' placeholder='Name your recipe'><br>
 
-    <input class="button" type="submit" value="Add to My Cookbook">
-  </form>
-</div>
+  <div id="new_ingredients_form_section">
+   <%= erb :'recipe/_ingredient_form'  %>
+  </div>
 
-    <button id="add_ingredient" class="button">Add another ingredient</button>
+  <input class="button" type="submit" value="Add to My Cookbook">
+
+</form>
+
+<button id="add_ingredient" class="button">Add another ingredient</button>

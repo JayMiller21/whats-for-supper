@@ -1,14 +1,54 @@
 $(document).ready(function() {
 
+  // var addIngredientFormPartial = function (event) {
+
+  //   $.ajax({
+  //     url: "/ingredient/new"
+  //   }).done(function( html ) {
+  //       $( "div#new_ingredients" ).append( html );
+  //   });
+
+  // };
+
   $("#add_ingredient").on("click", function(event) {
 
-    $.ajax({
-      url: "/ingredient/new"
-    }).done(function( ingredientForm ) {
-        $( "div#ingredients" ).append( ingredientForm );
-    });
+      $.ajax({
+        url: "/ingredient/new"
+      }).done(function( html ) {
+          $( "div#new_ingredients_form_section" ).append( html );
+      });
 
   });
+
+  // var saveNewRecipe = function (event) {
+
+  //   event.preventDefault()
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url:'/recipe/new',
+  //     dataType: "json",
+  //     data:$("#new_recipe_form").serialize()
+  //   }).done(function( html ) {
+  //     console.log("Recipe Created!")
+  //   });
+
+  // }
+
+  $("#new_ingredients_form_section").on('submit', ".single_ingredient_form_partial", function (event) {
+
+    event.preventDefault()
+
+    $.ajax({
+      type: "POST",
+      url:'/recipe/new',
+      dataType: "json",
+      data:$("#new_recipe_form").serialize()
+    }).done(function( html ) {
+      console.log("Recipe Created!")
+    });
+
+  })
 
 });
 
