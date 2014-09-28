@@ -62,7 +62,8 @@ $(document).ready(function() {
       dataType: "json",
       data:$("#add_comment_to_recipe").serialize()
     }).done(function(response){
-      $("#comments_display").append(response.comment)
+      $("#comments_display").append("<li><div id='comment_box'><p>" + response.comment + "</p></div></li><br>"
+        )
     });
 
     });
