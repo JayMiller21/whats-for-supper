@@ -46,11 +46,11 @@ end
 
 post '/recipe/:id/comment/new' do
   @new_comment = Comment.create(recipe_id: params[:id], content: params[:comment], owner_id: @current_user_id)
-  # if request.xhr?
+  if request.xhr?
     { comment: @new_comment.content }.to_json
-  # else
-  #   redirect to :"/recipe/#{params[:id]}"
-  # end
+  else
+    redirect to :"/recipe/#{params[:id]}"
+  end
 end
 
 # post '/comment/:id/votes' do
