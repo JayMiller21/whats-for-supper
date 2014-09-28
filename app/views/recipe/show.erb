@@ -9,3 +9,17 @@
 
 <h2>Macronutrient Breakdown</h2>
 <figure id="macronutrient_pie_chart"></figure>
+
+<h2>Comments</h2>
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <div id="comment_box">
+
+        <p><%=comment.content%></p>
+
+      </div>
+
+    </li><br>
+  <% end %>
+</ul>

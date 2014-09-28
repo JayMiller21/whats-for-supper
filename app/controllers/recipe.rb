@@ -16,6 +16,7 @@ get '/recipe/:id' do
     FoodItem.find(ingredient.food_item_id).name
   end
   @ingredient_names.to_a
+  @comments = @recipe.comments
     # binding.pry
   erb :'recipe/show'
 end
@@ -42,3 +43,7 @@ get '/ingredient/new' do
   p "hello"
   erb :'recipe/_ingredient_form', layout: false
 end
+
+# post '/comment/:id/votes' do
+#   @comments
+# end
