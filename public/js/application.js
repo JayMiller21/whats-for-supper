@@ -63,6 +63,7 @@ $(document).ready(function() {
       data:$("#add_comment_to_recipe").serialize()
     }).done(function(response){
       $("#comments_display").append("<li><div id='comment_box'><p>" + response.comment + "</p></div></li><br>"
+        //TODO: refactor the above to use a partial that holds the @comments loop; in post route, make an @comments that only holds the one new comment. Send the partial erb html to js as the return value, change ajax dataType to html.
         )
     });
 
