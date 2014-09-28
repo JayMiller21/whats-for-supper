@@ -12,12 +12,12 @@
 
 <h2>Comments</h2>
 
-<form action="/recipe/<%=@recipe.id%>/comment/new" method="post">
-  <textarea placeholder="Add a comment..." name="comment"></textarea>
+<form action="/recipe/<%=@recipe.id%>/comment/new" method="post" id="add_comment_to_recipe" name="<%=@recipe.id%>">
+  <textarea placeholder="Add a comment..." name="comment"></textarea><br>
   <input type="submit" value=" Add  Comment">
 </form>
 
-<ul>
+<ul id="comments_display">
   <% @comments.each do |comment| %>
     <li>
       <div id="comment_box">

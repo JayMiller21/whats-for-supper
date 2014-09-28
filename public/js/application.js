@@ -48,7 +48,24 @@ $(document).ready(function() {
       console.log("Recipe Created!")
     });
 
-  })
+    });
+
+  $("#add_comment_to_recipe").on('submit',function(event) {
+
+    event.preventDefault();
+
+    var recipeId = $("#add_comment_to_recipe").attr("name");
+
+    $.ajax({
+      type: "POST",
+      url: "/recipe/" + recipeId + "/comment/new",
+      dataType: "json",
+      data:$("#add_comment_to_recipe").serialize()
+    }).done(function(response){
+      $("#comments_display").append(response.comment)
+    });
+
+    });
 
 });
 
