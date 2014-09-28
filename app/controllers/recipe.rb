@@ -44,6 +44,11 @@ get '/ingredient/new' do
   erb :'recipe/_ingredient_form', layout: false
 end
 
+post '/recipe/:id/comment/new' do
+  @new_comment = Comment.create(recipe_id: params[:id], content: params[:comment], owner_id: @current_user_id)
+  redirect to :"/recipe/#{params[:id]}"
+end
+
 # post '/comment/:id/votes' do
 #   @comments
 # end

@@ -11,10 +11,17 @@
 <figure id="macronutrient_pie_chart"></figure>
 
 <h2>Comments</h2>
+
+<form action="/recipe/<%=@recipe.id%>/comment/new" method="post">
+  <textarea placeholder="Add a comment..." name="comment"></textarea>
+  <input type="submit" value=" Add  Comment">
+</form>
+
 <ul>
   <% @comments.each do |comment| %>
     <li>
       <div id="comment_box">
+
 
         <p><%=comment.content%></p>
 
