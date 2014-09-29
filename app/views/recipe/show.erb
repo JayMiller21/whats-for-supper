@@ -1,0 +1,37 @@
+<h1><%= @recipe.name.capitalize %></h1>
+
+<h2>Ingredients</h2>
+  <ul>
+    <% @ingredient_names.each do |ingredient|%>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+
+<h2>Macronutrient Breakdown</h2>
+<figure id="macronutrient_pie_chart"></figure>
+
+<h2>Comments</h2>
+
+<form action="/recipe/<%=@recipe.id%>/comment/new" method="post" id="add_comment_to_recipe" name="<%=@recipe.id%>">
+  <textarea placeholder="Add a comment..." name="comment"></textarea><br>
+  <input type="submit" value=" Add  Comment">
+</form>
+
+<ul id="comments_display">
+  <% @comments.each do |comment| %>
+    <li>
+
+      <form class="comment_upvote_btn" id="<%= comment.id %>" action="/comment/<%= comment.id %>/votes" method="POST">
+        <input type="submit" value="^">
+      </form>
+
+      <p>Points: <span id="votecount-<%= comment.id %>"><%= comment.points %></span></p>
+
+      <div id="comment_box">
+        <p><%=comment.content%></p>
+      </div>
+    </li><br>
+  <% end %>
+</ul>
+
+

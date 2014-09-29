@@ -1,0 +1,9 @@
+<!-- TODO: This page is to be loaded each time a new ingredient is to be added to a recipe that's being created. Currently, it's only loaded once, and only one ingredient can be entered. -->
+
+<div class="single_ingredient_form_partial">
+  <span><%= @ingredient_counter %>.</span>
+  <input type="text" name='recipe[ingredient][quantity]' placeholder='Quantity: i.e. 1'>
+  <input type="text" name='recipe[ingredient][unit]' placeholder='Unit: i.e. Cups'>
+  <input type="text" name='recipe[ingredient][food_item_id]' placeholder='Food Item: i.e. Flour'>
+  <!-- <span>remove</span> -->
+</div>
