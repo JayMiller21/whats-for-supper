@@ -69,6 +69,25 @@ $(document).ready(function() {
 
     });
 
+  // $(".comment_upvote_btn").on("submit", function(event) {
+
+  //   event.preventDefault();
+
+  //   var commentId = $(this).attr("id");
+  //   console.log(commentId);
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "/comment/" + commentId + "/votes",
+  //     dataType: "json"
+  //   }).done(function(response) {
+  //     console.log(response.votecount);
+  //     $("#votecount-"+ commentId).html(response.votecount);
+  //   });
+
+  // });
+
+
+
 });
 
 

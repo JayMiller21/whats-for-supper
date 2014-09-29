@@ -53,6 +53,12 @@ post '/recipe/:id/comment/new' do
   end
 end
 
-# post '/comment/:id/votes' do
-#   @comments
-# end
+post '/comment/:comment_id/votes' do
+  @comment_vote = CommentVote.create(comment_id: params[:comment_id], voter_id: @current_user_id, upvote: true)
+  @upvotes = CommentVote.where(comment_id: params[:comment_id], upvote: true)
+  @points = @upvotes.length
+  @recipe = @comment_vote.comment.recipe
+  redirect to :"/recipe/#{@recipe.id}"
+  # binding.pry
+  # { votecount: @votecount }.to_json
+end

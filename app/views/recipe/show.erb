@@ -20,6 +20,13 @@
 <ul id="comments_display">
   <% @comments.each do |comment| %>
     <li>
+
+      <form class="comment_upvote_btn" id="<%= comment.id %>" action="/comment/<%= comment.id %>/votes" method="POST">
+        <input type="submit" value="^">
+      </form>
+
+      <p>Points: <span id="votecount-<%= comment.id %>"><%= comment.points %></span></p>
+
       <div id="comment_box">
         <p><%=comment.content%></p>
       </div>
