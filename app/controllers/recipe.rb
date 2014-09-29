@@ -58,7 +58,10 @@ post '/comment/:comment_id/votes' do
   @upvotes = CommentVote.where(comment_id: params[:comment_id], upvote: true)
   @points = @upvotes.length
   @recipe = @comment_vote.comment.recipe
-  redirect to :"/recipe/#{@recipe.id}"
+  if request.xhr?
+    { votecount: @points }.to_json
+  else
+    redirect to :"/recipe/#{@recipe.id}"
+  end
   # binding.pry
-  # { votecount: @votecount }.to_json
 end
